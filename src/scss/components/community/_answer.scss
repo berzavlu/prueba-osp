@@ -1,0 +1,54 @@
+.answer {
+  background-color: $bg-answer;
+  border-radius: 4px;
+  padding: 0.3em 0.8em 0.8em;
+
+  &__label {
+    font-size: 0.9em;
+    line-height: 1;
+    font-family: $font-regular;
+  }
+
+  //modificador
+  .main-content {
+    font-size: 1.05em;
+    line-height: 1.4;
+    &__moreTxt {
+      display: inline;
+    }
+    .loadMoreTxt {
+      padding-left: 5px;
+      display: inline-block;
+      color: #7178c6;
+      font-family: "sermadre medium", helvetica, sans-serif;
+    }
+  }
+
+  .user-interaction {
+    margin: 8px 0;
+  }
+
+  .main-content__more {
+    background-color: $bg-answer;
+    &:before {
+      background: linear-gradient(90deg, transparent, $bg-answer);
+    }
+  }
+
+  &.specialist-answer {
+    background-color: $bg-green-light;
+    .answer {
+      &__label {
+        color: $color-specialist;
+      }
+    }
+    .main-content__more {
+      background-color: $bg-green-light;
+      &:before {
+        background: linear-gradient(90deg, transparent, $bg-green-light);
+      }
+    }
+  }
+
+}
+

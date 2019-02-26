@@ -1,0 +1,35 @@
+$border-input: darken($purple-gray, 5);
+
+.form-control {
+  border: 1px solid $border-input;
+  border-radius: $border-radius;
+  width: 100%;
+  display: block;
+  padding: 0.6em 0.9em;
+  color: $color-titles;
+  font-family: $font-regular;
+  font-size: 1em;
+  @include hover-focus-active() {
+    outline: none;
+  }
+  @include placeholder {
+    color: $gray-500;
+  }
+}
+
+.form-group {
+  margin-bottom: 0.8em;
+}
+
+label {
+  font-size: 0.95em;
+  font-family: $font-regular;
+  display: inline-block;
+  margin-bottom: 0.15em;
+}
+
+textarea {
+  min-height: 120px;
+  min-width: 100%;
+  max-width: 100%;
+}

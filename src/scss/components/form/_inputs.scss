@@ -1,0 +1,127 @@
+// VARIABLES
+
+.input-material {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 6px;
+  z-index: 1;
+  &__label {
+    position: absolute;
+    top: 16px;
+    color: $gray-500;
+    font-weight: 500;
+    transition: all 0.3s;
+    z-index: -1;
+    left: 0;
+  }
+  &__line {
+    width: 100%;
+    height: 1px;
+    display: block;
+    background-color: darken($gray-200, 20);
+    position: relative;
+    &:before {
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      bottom: 0;
+      content: '';
+      width: 0;
+      height: 2px;
+      background-color: $sermadre-rose;
+      transition: all 0.3s;
+    }
+  }
+  &__control {
+    width: 100%;
+    display: block;
+    outline: none;
+    padding: 5px 0 5px;
+    color: $gray-700;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+    border: 0;
+    background-color: transparent;
+    &:focus {
+      + .input-material__details {
+        .input-material__line:before {
+          width: 100%;
+        }
+        .input-material__label {
+          font-size: 14px;
+          top: -2px;
+        }
+      }
+    }
+    &:valid {
+      + .input-material__details {
+        .input-material__label {
+          font-size: 14px;
+          top: -2px;
+        }
+      }
+    }
+    &:-webkit-autofill {
+      transition: background-color 50000s ease-in-out 0s;
+      + .input-material__details {
+        .input-material__label {
+          font-size: 14px;
+          top: -2px;
+        }
+      }
+    }
+    //&:-moz-autofill, &:autofill {
+    //  transition: background-color 50000s ease-in-out 0s;
+    //  + .input-material__details {
+    //    .input-material__label {
+    //      font-size: 14px;
+    //      top: -2px;
+    //    }
+    //  }
+    //}
+  }
+
+  &.demo {
+    .input-material__details {
+      .input-material__label {
+        font-size: 14px;
+        top: -2px;
+      }
+    }
+  }
+
+  &.error {
+    .input-material {
+      &__label {
+        color: red;
+      }
+      &__line {
+        background-color: red;
+        &:before {
+          background-color: red;
+        }
+      }
+    }
+    .text-danger {
+      color: red;
+    }
+  }
+
+}
+
+
+.file-ghost{
+  display: none;
+}
+
+.file-add-ghost {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  opacity: 0;
+  cursor: pointer;
+}

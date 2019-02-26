@@ -1,0 +1,26 @@
+$icon-version: 1.2;
+
+@font-face {
+  font-family: 'sermadre';
+  src: url($cdn +'static/assets/fonts/icons/sermadre.eot?' + $icon-version);
+  src: url($cdn +'static/assets/fonts/icons/sermadre.eot?' + $icon-version + '#iefix') format('embedded-opentype'),
+  url($cdn +'static/assets/fonts/icons/sermadre.ttf?' + $icon-version) format('truetype'),
+  url($cdn +'static/assets/fonts/icons/sermadre.woff?' + $icon-version) format('woff'),
+  url($cdn +'static/assets/fonts/icons/sermadre.svg' + $icon-version + '#sermadre') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'sermadre', sans-serif;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-display: swap;
+}

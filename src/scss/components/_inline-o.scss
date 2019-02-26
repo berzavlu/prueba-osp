@@ -1,0 +1,26 @@
+.inline-o {
+  position: relative;
+  margin: 1.15em 0;
+  text-align: center;
+  line-height: 1;
+  &:before {
+    content: '';
+    background: #e1e1e1;
+    height: 1px;
+    width: 100%;
+    display: block;
+    top: 50%;
+    position: absolute;
+  }
+  span {
+    display: block;
+    margin: 0 auto;
+    background: white;
+    width: 40px;
+    position: relative;
+    z-index: 1;
+    color: #7c7c7c;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}

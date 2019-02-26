@@ -1,0 +1,28 @@
+.check-select {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  font-size: 0.8em;
+  line-height: 1;
+  display: inline-block;
+  transition: all 0.2s;
+  i {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &.green {
+    background-color: #54ccd8;
+    color: #ffffff;
+  }
+  &.white {
+    background-color: #ffffff;
+    color: #54ccd8;
+  }
+}

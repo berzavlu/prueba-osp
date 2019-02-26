@@ -1,0 +1,55 @@
+.card-comunidadesWrap {
+  padding: 1em 1em 0 0;
+  .card-carrusel__item {
+    max-width: calc(100% / 2);
+    display: inline-block;
+    vertical-align: top;
+    @media screen and (max-width: 568px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.coverComunidad {
+  &--grey {
+    background-color: rgba(106, 107, 123, 0.85);
+    padding: 50px 50px;
+    min-height: 230px;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    @media (max-width: 420px) {
+      padding: 35px 30px;
+      min-height: auto;
+    }
+  }
+  &--bg {
+    background-image: url($cdn +'static/assets/img/banner--comunidad.jpg');
+    color: #fff;
+    color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 0.25rem;
+  }
+  &--text {
+    max-width: 325px;
+  }
+  h1 {
+    font-size: 1.65em;
+    max-width: 325px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $font-medium;
+    font-weight: 100;
+    margin-bottom: 0.7em;
+  }
+  p {
+    max-width: 245px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+}

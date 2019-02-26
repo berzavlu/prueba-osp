@@ -1,0 +1,20 @@
+.card--comment {
+  .calification {
+    margin-top: 0;
+  }
+}
+
+.comment-item {
+  padding: 1em;
+  border-bottom: 1px solid $color-borders;
+
+  // Modificadores
+  .user-interaction {
+    margin-top: 0;
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

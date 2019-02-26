@@ -1,0 +1,132 @@
+// Variables
+@import "../variables/grid";
+
+// Mixins
+@import "../helpers/mixins/breakpoints";
+@import "../helpers/mixins/text-truncate";
+
+// Style
+// Alignment
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-truncate {
+  @include text-truncate;
+}
+
+// Responsive alignment
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .text#{$infix}-left {
+      text-align: left;
+    }
+    .text#{$infix}-right {
+      text-align: right;
+    }
+    .text#{$infix}-center {
+      text-align: center;
+    }
+  }
+}
+
+// Style font
+.f-light {
+  font-family: $font-light;
+}
+
+.f-regular {
+  font-family: $font-regular;
+}
+
+.f-medium {
+  font-family: $font-medium;
+}
+
+.f-semibold {
+  font-family: $font-semibold;
+}
+
+.f-bold {
+  font-family: $font-bold;
+}
+
+// Transformation
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+// Tamaños de fuentes
+.f-normal {
+  font-size: $font-size-normal;
+}
+
+.f-16 {
+  font-size: $font-16;
+}
+
+.f-18 {
+  font-size: $font-18;
+}
+
+.f-20 {
+  font-size: $font-20;
+}
+
+.f-22 {
+  font-size: $font-22;
+}
+
+.f-24 {
+  font-size: $font-24;
+}
+
+.f-26 {
+  font-size: $font-26;
+}
+
+.f-28 {
+  font-size: $font-28;
+}
+
+.f-30 {
+  font-size: $font-30;
+}
+
+.f-40 {
+  font-size: $font-40;
+}
+
+// Titulos
+.title-1 {
+  font-size: 1.5em;
+}
+
+.title-2 {
+  font-size: 1.4em;
+}
+
+.title-3 {
+  font-size: 1.3em;
+}
+
+.title-4 {
+  font-size: 1.2em;
+}
+
+.title-5 {
+  font-size: 1em;
+}

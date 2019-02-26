@@ -1,0 +1,70 @@
+.box-page {
+  &__main {
+    transition: $transition;
+    position: relative;
+  }
+}
+
+.page {
+  padding: 8px 0;
+
+  @media (min-width: 768px) {
+    padding: 16px 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  &__main {
+    width: calc(100% - 300px);
+    padding-right: 16px;
+
+    @media (max-width: 960px) {
+      width: 100%;
+      padding-right: 0;
+    }
+
+  }
+  &__aside {
+    width: 100%;
+    &.aside-no-mobile {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      @media (min-width: 961px) {
+        width: 300px;
+        height: inherit;
+        overflow: inherit;
+      }
+    }
+    @media (min-width: 960px) {
+      width: 300px;
+      display: block;
+    }
+  }
+}
+
+.sticky-aside {
+  @media (min-width: 960px) {
+    position: sticky;
+    top: 74px;
+  }
+}
+
+.widget-page {
+  margin-bottom: 7px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    margin-bottom: 16px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    //@media (max-width: 990px) {
+    //  margin-bottom: 17px;
+    //}
+  }
+}

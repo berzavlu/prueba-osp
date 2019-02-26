@@ -1,0 +1,51 @@
+.stars{
+  &--1 {
+    i {
+      &:nth-child(1) {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  &--2 {
+    i {
+      &:nth-child(1),
+      &:nth-child(2) {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  &--3 {
+    i {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  &--4 {
+    i {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  &--5 {
+    i {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
+        color: $brand-primary;
+      }
+    }
+  }
+}

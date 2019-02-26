@@ -1,0 +1,271 @@
+// Variables
+$enable-shadows: false !default;
+$btn-focus-width: .2rem !default;
+$btn-transition: color .15s ease-in-out,
+background-color .15s ease-in-out,
+border-color .15s ease-in-out,
+box-shadow .15s ease-in-out !default;
+
+
+// Mixins
+@mixin button-variant($background, $color, $hover-color) {
+  $border: $background;
+  $background: $background;
+  $background-hover: darken($background, 7.5%);
+  $hover-border: darken($background, 10%);
+  color: $color;
+  border-color: $border;
+  background-color: $background;
+  @include hover {
+    background-color: $background-hover;
+    border-color: $hover-border;
+    color: $hover-color;
+  }
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
+  }
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    background-color: $background;
+    border-color: $border;
+  }
+}
+
+@mixin button-variant-outline($background, $color, $hover-color) {
+  $border: $background;
+  $background-hover: darken($background, 7.5%);
+  $hover-border: darken($background, 10%);
+  color: $background;
+  border-color: $background;
+  background-color: transparent;
+  &:hover {
+    color: $color;
+    background-color: $background-hover;
+    border-color: $hover-border;
+  }
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 $btn-focus-width rgba($border, .5);
+  }
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+// Style
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  -webkit-appearance: none;
+  transition: $btn-transition;
+  cursor: pointer;
+
+  // hover and focus
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+
+  // Disabled
+  &.disabled,
+  &:disabled {
+    opacity: .65;
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .btn elements
+  //&:not(:disabled):not(.disabled) {
+  //  cursor: pointer;
+  //}
+
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    background-image: none;
+  }
+
+  //Si tiene icono
+  i, .ico {
+    font-size: 1.4em;
+  }
+
+  span, i, .ico {
+    vertical-align: middle;
+  }
+
+  &.ico-letf {
+    i,
+    .ico {
+      margin-right: 8px;
+    }
+  }
+
+  &.ico-right {
+    i,
+    .ico {
+      margin-left: 8px;
+    }
+  }
+
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+// Alternate buttons
+@each $name, $colors in $buttons {
+  $bgcolor: nth($colors, 1);
+  $color: nth($colors, 2);
+  $hover-color: nth($colors, 3);
+  .btn-#{$name} {
+    @include button-variant($bgcolor, $color, $hover-color);
+  }
+}
+
+@each $name, $colors in $buttons {
+  $bgcolor: nth($colors, 1);
+  $color: nth($colors, 2);
+  $hover-color: nth($colors, 3);
+  .btn-outline-#{$name} {
+    @include button-variant-outline($bgcolor, $color, $hover-color);
+  }
+}
+
+// Link buttons
+.btn-link {
+  font-weight: $font-weight-normal;
+  color: $link-color;
+  background-color: transparent;
+  @include hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  &:disabled,
+  &.disabled {
+    color: $gray-500;
+    pointer-events: none;
+  }
+}
+
+// Button Sizes
+.btn {
+  @include button-size(
+                  .6rem, // padding-y
+                  .75rem, // padding-x
+                          ($font-size-base * .95), // fuente
+                  $line-height-base, // line-height
+                  $border-radius // border-radius
+  );
+}
+
+.btn-sm {
+  @include button-size(
+                  .2em,
+                  .6em,
+                          ($font-size-base * .8),
+                  $line-height-sm,
+                  $border-radius
+  );
+}
+
+.btn-md {
+  @include button-size(
+                  .75rem,
+                  1.5rem,
+                          ($font-size-base * .95),
+                  $line-height-sm,
+                  $border-radius
+  );
+}
+
+.btn-lg {
+  @include button-size(
+                  .9rem,
+                  2rem,
+                          ($font-size-base * 1.15),
+                  $line-height-sm,
+                  $border-radius
+  );
+}
+
+.btn--loading {
+  position: relative;
+  opacity: 0.5;
+  color: transparent;
+  cursor: default;
+  &:hover{
+    color: transparent;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    margin: auto;
+    background-image: url($cdn +'static/assets/img/icons/circle-loading.svg');
+    //width: 10px;
+    //border: 2px solid #fff;
+    //border-radius: 0 100px 100px 0;
+    //border-left: 0;
+    animation: btn-loading 0.3s linear infinite;
+  }
+}
+
+//Animacion de carga btn
+@keyframes btn-loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-block{
+  display: block;
+  width: 100%;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}

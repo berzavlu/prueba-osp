@@ -1,0 +1,79 @@
+.user-interaction {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .c-user{
+    margin-right: 10px;
+  }
+
+  &__info {
+    line-height: 1.5;
+    padding-left: 1em;
+  }
+
+  &__name {
+    color: $gray-800;
+    font-size: 1em;
+    font-family: $font-medium ;
+    display: block;
+    line-height: 1;
+    @include hover-focus(){
+      text-decoration: none;
+    }
+  }
+
+  &__date, &__state{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__date {
+    color: $gray-600;
+    display: block;
+    font-weight: 500;
+    font-size: 0.85em;
+    margin-top: 3px;
+    line-height: 1.25;
+  }
+
+  &__state {
+    color: $gray-600;
+    font-size: 0.81em;
+    line-height: 1.25;
+    margin-top: 5px;
+    display: inline-block;
+    font-family: 'helvetica', Arial, sans-serif;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn{
+    font-size: 0.88em;
+    border-radius: 3px;
+    line-height: 1.4em;
+    font-family: $font-light;
+    //padding: 0.6 - $btn-padding-y (1.8 - $btn-padding-x);
+  }
+
+  &.small {
+    .user-interaction {
+      &__name {
+        font-size: 0.86em;
+      }
+    }
+  }
+
+
+}

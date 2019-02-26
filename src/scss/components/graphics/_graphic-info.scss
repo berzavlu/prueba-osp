@@ -1,0 +1,29 @@
+.graphic-info {
+  text-align: center;
+  padding: 2.5em 1em;
+  .circle-icon {
+    width: 125px;
+    height: 125px;
+    margin-bottom: 2em;
+    &.purple-light {
+      background-color: transparentize($sermadre-purple, 0.75);
+    }
+    i {
+      font-size: 2.95em;
+      color: $sermadre-purple;
+    }
+  }
+
+  &__description {
+    &-2 {
+      margin-top: 2.5em;
+    }
+  }
+  &__action{
+    margin-bottom: 1em;
+  }
+}
+
+.block-info {
+  margin: 1em 0;
+}

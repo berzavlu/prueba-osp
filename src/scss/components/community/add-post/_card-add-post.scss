@@ -1,0 +1,42 @@
+.card-add-post {
+  background-color: #ffffff;
+  border: 1px solid $color-borders;
+  position: relative;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__title {
+    padding-left: 15px;
+    position: relative;
+    font-family: $font-medium;
+    font-size: 1.05em;
+    line-height: 1;
+    @media (min-width: 520px) {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+  }
+
+  &__icon-principal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: $transition;
+    font-size: 1.5em;
+    @include hover-focus-active {
+      background-color: $purple-gray;
+    }
+  }
+
+}

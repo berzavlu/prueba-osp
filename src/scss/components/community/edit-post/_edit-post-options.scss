@@ -1,0 +1,29 @@
+.main-options {
+  background-color: $light-gray;
+  border-bottom: 1px solid $color-borders;
+  padding: 8px;
+  border-radius: 4px;
+  margin: -15px -15px 15px;
+}
+
+.edit-options {
+  // Tipos
+  &--items{
+    width: 100%;
+    text-align: center;
+    @media (min-width: 768px){
+      width: initial;
+      text-align: left;
+    }
+  }
+  &--gallery {
+    .action-capsule {
+      //opacity: 0.3;
+    }
+    .option-image {
+      //background-color: $sermadre-purple;
+      //color: #ffffff;
+      //opacity: 1;
+    }
+  }
+}

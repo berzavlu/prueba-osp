@@ -1,0 +1,40 @@
+//tamaños
+$font-size-base:              0.96rem !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+$font-size-md:                ($font-size-base * 0.97) !default;
+$font-size-lg:                ($font-size-base * 1.25) !default;
+
+$font-size-normal:            1em; // 15.5px
+$font-16:                     1.045em; // 16px
+$font-18:                     1.161em; // 18px
+$font-20:                     1.290em; // 20px
+$font-22:                     1.419em; // 22px
+$font-24:                     1.548em; // 24px
+$font-26:                     1.677em; // 26px
+$font-28:                     1.806em; // 28px
+$font-30:                     1.935em; // 30px
+$font-40:                     2.581em; // 40px
+
+$line-height-base:            1.45em;
+$line-height-lg:              1.5 !default;
+$line-height-sm:              1.5 !default;
+
+$font-weight-base:            normal;
+
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+$letter-spacing:              0.01em;
+
+//Parrafos
+$paragraph-margin-bottom:     1em;
+
+//h1, h2, h3, h4, h5...
+$headings-margin-bottom:      0.5em;
+
+// Links
+$link-color:                  #fff !default;
+$link-decoration:             none !default;
+$link-hover-color:            #10d5ff;//darken($link-color, 15%) !default;
+$link-hover-decoration:       none !default;

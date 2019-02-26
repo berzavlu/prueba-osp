@@ -1,0 +1,65 @@
+.input-check {
+  margin-left: -6px;
+  margin-right: 11px;
+  &__txt {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 500;
+    color: $gray-500;
+    line-height: 100%;
+  }
+  &__control {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    border: 2px solid $gray-500;
+    border-radius: 2px;
+    margin-right: 2px;
+    position: relative;
+    transition: all 0.2s;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      margin: auto;
+    }
+    &:before {
+      width: 100%;
+      height: 100%;
+      background-color: $sermadre-purple;
+      color: #ffffff;
+      transition: all 0.2s;
+      transform: scale(0);
+    }
+    &:after {
+      left: 2px;
+      top: 2px;
+      width: 8px;
+      height: 5px;
+      border: 2px solid #ffffff;
+      border-top: 0;
+      border-right: 0;
+      transform: rotate(-45deg) scale(0);
+      transition: all 0.2s;
+    }
+  }
+  input {
+    width: 0;
+    height: 0;;
+    visibility: hidden;
+    opacity: 0;
+    &:checked {
+      + {
+        .input-check__control {
+          border: 2px solid $sermadre-purple;
+          &:before {
+            transform: scale(1);
+          }
+          &:after {
+            transform: rotate(-45deg) scale(1);
+          }
+        }
+      }
+    }
+  }
+}

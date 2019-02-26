@@ -1,0 +1,25 @@
+.header-search {
+  max-width: 550px;
+  width: calc(100% - 375px);
+  .header-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-search {
+    margin-right: 0;
+    width: calc(100% - 306px);
+    .header-menu {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media (max-width: 888px) {
+  .header-search {
+    width: auto;
+    margin-right: 0.7em;
+  }
+}

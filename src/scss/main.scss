@@ -1,0 +1,548 @@
+// Variables
+@import "variables-commons";
+
+
+// Mixins commons
+@import "mixins-commons";
+
+
+// Libraries
+@import "lib/slick";
+@import "lib/nprogress";
+
+
+// Resource
+@import "resources/font";
+@import "resources/icons";
+
+
+// Reset and utilities files
+@import "base";
+
+
+// Layouts
+@import "layouts/backgrounds";
+@import "layouts/containers";
+@import "layouts/grid";
+@import "layouts/header";
+@import "layouts/brand";
+@import "layouts/bar-breadcrumb";
+@import "layouts/aside";
+@import "layouts/main-content";
+@import "layouts/siderbar";
+@import "layouts/footer";
+@import "layouts/padding";
+@import "layouts/margin";
+
+
+// Components skeleton
+@import "components/skeleton/skeleton-question";
+
+
+// Components Commons
+@import "components/commons/menu-hamburger";
+@import "components/commons/progress-bars";
+@import "components/commons/card";
+@import "components/commons/avatars";
+@import "components/commons/user-interaction";
+@import "components/commons/menu-points";
+@import "components/commons/pagination";
+@import "components/commons/dropdowns";
+@import "components/commons/calification";
+@import "components/commons/circle-icon";
+@import "components/commons/nav-horizontal";
+
+
+// Components Main search
+@import "components/box-search/search";
+
+
+// Components Balloon
+@import "components/balloons/balloon";
+@import "components/balloons/box-notifications";
+
+
+// Components Social
+@import "components/social/social-circle";
+@import "components/social/social-btns";
+@import "components/social/social-iframes";
+
+
+// Components Forms
+@import "components/form/checkbox";
+@import "components/form/inputs";
+@import "components/form/select";
+@import "components/form/toggle";
+@import "components/form/buttons";
+@import "components/form/otros";
+@import "components/form/date-picker";
+@import "components/form/select-custom";
+@import "components/form/action-capsule";
+
+
+// Components Community
+@import "components/community/add-post/add-post";
+@import "components/community/edit-post/edit-post";
+@import "components/community/info-box";
+@import "components/community/answer";
+@import "components/community/add-reply";
+@import "components/community/question";
+@import "components/community/group-inline";
+@import "components/community/user-list";
+
+
+// Components Profile
+@import "components/profile/card-profile";
+@import "components/profile/box-profile";
+@import "components/profile/weeks-info";
+@import "components/profile/children-info";
+@import "components/profile/status-info";
+@import "components/profile/addresses-info";
+@import "components/profile/info-block";
+@import "components/profile/reserve-specialist";
+
+
+// Components Blog
+//@import "components/blog/header-single";
+@import "components/blog/card-blog-big";
+@import "components/blog/single";
+@import "components/blog/item-blog";
+@import "components/blog/block-categories";
+@import "components/blog/widgets";
+@import "components/blog/plugins";
+@import "components/blog/wordpress";
+
+
+// Components Otros
+@import "components/square-select";
+@import "components/check-select";
+@import "components/card-select";
+@import "components/comment";
+@import "components/gallery";
+@import "components/modal-gallery";
+@import "components/card-carrusel";
+@import "components/bar-options";
+@import "components/actions";
+@import "components/banner";
+@import "components/card-follow";
+@import "components/formRegistro";
+@import "components/message-info";
+
+
+// Components Widgest
+@import "components/widgets/cards-sliders";
+@import "components/widgets/comments";
+@import "components/widgets/enterprise";
+
+
+// Components Graphics
+@import "components/graphics/baby";
+@import "components/graphics/graphic-info";
+
+
+// Components Empty States
+//@import "components/empty-states/";
+
+
+// Components Ads
+@import "components/ad/ad-video";
+@import "components/ad/big-banner";
+
+
+// Components Utilities
+@import "utilities/align";
+@import "utilities/display";
+@import "utilities/colors";
+@import "utilities/media";
+@import "utilities/flex";
+@import "utilities/icons";
+@import "utilities/typography";
+@import "utilities/interaction-to-write";
+@import "utilities/border";
+@import "utilities/cursor";
+@import "utilities/select";
+
+
+// Pages
+@import "page/page";
+@import "page/home";
+@import "page/comunidades";
+@import "page/comunidad";
+@import "page/name";
+@import "page/single-dabate";
+@import "page/mini-page";
+@import "page/wizard-page";
+@import "page/404";
+@import "page/debate";
+@import "page/herramientas";
+@import "page/semanas-de-embarazo";
+
+
+// Temp
+@import "temp";
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 999999999;
+  top: 0;
+  visibility: inherit;
+  opacity: 1;
+  transition: visibility 1s, opacity 0.5s linear;
+  &--done {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.js-lazy-img {
+  transition: opacity 200ms ease;
+  opacity: 0;
+  &--loaded {
+    opacity: 1;
+  }
+}
+
+
+
+
+.mainWrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+
+
+.mainContent {
+  background-color: #0c171e;
+  width: calc(100% - 300px);
+  padding: 0 3.5em;
+  overflow: hidden;
+}
+
+
+/* sidebar */
+aside {
+  padding: 0 3.5em;
+  max-width: 300px;
+  width: 100%;
+}
+.logoSidebar {
+  text-align: center;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.browseMain {
+  padding-bottom: 50px;
+  &__title {
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: .2em;
+    margin-bottom: 20px;
+  }
+  &__list {
+    list-style: none;
+    li {
+      margin-bottom: 20px;
+      a {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: .1em;
+      }
+    }
+    &--active {
+      color: #10d5ff;
+      &::before {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 3px;
+        height: 25px;
+        background-color: #10d5ff;
+      }
+    }
+  }
+}
+.browseCategories {
+  &__title {
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: .2em;
+    margin-bottom: 15px;
+  }
+  &__list {
+    list-style: none;
+    li {
+      margin-bottom: 10px;
+      a {
+        color: #7c8496;
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: .1em;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+/* topbar */
+header {
+  height: 140px;
+}
+/* content */
+.mainTitle {
+  color: #fff;
+  letter-spacing: .1em;
+  font-weight: 400;
+  font-size: 26px;
+}
+
+/* bloque */
+.posterBloque {
+  max-width: 235px;
+  display: block !important;
+  margin: 0 auto !important;
+  &--inactive {
+    opacity: .2;
+  }
+  &--img {
+    width: 170px;
+    height: 250px;
+    margin: 0 auto;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.05);
+    }
+  }
+  &--nombre {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  &--fecha {
+    text-align: center;
+  }
+  &--shadow {
+    margin: 15px 10px;
+    padding: 20px;
+    border-radius: 3px;
+  }
+  &__actions {
+    visibility: hidden;
+    text-align: center;
+    margin-top: 10px;
+    &--status {
+      background-color: #091116;
+      text-transform: capitalize;
+      font-size: 12px;
+      width: 70px;
+      margin: 0 auto;
+    }
+    &--active {
+      color: #fff;
+      background-color: #05b1d6;
+    }
+    &--inactive {
+      color: #fff;
+      background-color: #ff103c;
+    }
+  }
+  &:hover {
+    .posterBloque--shadow {
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0, 0, 0, 0.05);
+      background-color: #101a23;
+      cursor: pointer;
+      -webkit-transition: all  200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+    }
+    .posterBloque__actions {
+      visibility: visible;
+    }
+  }
+}
+.slick-list {
+}
+.slick-prev, .slick-next {
+  background: #1c242d;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.05);
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  background: #1c242d !important;
+}
+
+.ReactModal__Overlay  {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  z-index: 9999999999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ReactModal__Content  {
+  width: 600px;
+  height: 365px;
+  margin: 0 auto;
+  vertical-align: middle;
+  top: inherit;
+  bottom: inherit;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background-color: #0c171e !important;
+  border: none !important;
+}
+.btn--main {
+  background-color: #10d5ff;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: .2em;
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.rowTitles {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 140px;
+}
+.fix-btn {
+  position: absolute;
+  right: 0;
+}
+
+.formContent {
+  &__group {
+    display: flex;
+    padding: 0px 15px;
+    margin: 20px 0px;
+    &--label {
+      width: 180px;
+      color: #fff;
+    }
+    &--input {
+      width: calc(100% - 180px);
+      input {
+        width: 100%;
+        border: none;
+        padding: 0px 5px;
+        border-radius: 2px;
+      }
+      select {
+        width: 100%;
+        border: none;
+        padding: 0px 5px;
+        border-radius: 2px;
+      }
+    }
+  }
+}
+.icon-closeModal {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  padding: 4px;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.btn--delete {
+  margin-left: 30px;
+  background-color: #ff103c;
+}
+button:focus {
+  outline: none;
+}
+
+.wrapDelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  height: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  h2 {
+    color: #fff,
+  }
+  &__actions {
+    text-align: center;
+  }
+}
+
+.contentSkeleton {
+  &__row {
+    padding: 1px 10px;
+    height: 416px;
+    display: flex;
+    width: 253px;
+    &--wrap {
+      margin: 15px 10px;
+      padding: 20px;
+      border-radius: 3px;
+    }
+    &__poster {
+      &--img {
+        background-color: #18222b;
+        width: 170px;
+        height: 250px;
+        margin: 0 auto;
+        border-radius: 2px;
+        animation: colorchange 50s; /* animation-name followed by duration in seconds*/
+        /* you could also use milliseconds (ms) or something like 2.5s */
+        -webkit-animation: colorchange 50s; /* Chrome and Safari */
+      }
+    }
+  }
+}
+
+@keyframes colorchange
+{
+  0%   {background: #18222b;}
+  25%  {background: #fff;}
+  50%  {background: #18222b;}
+  75%  {background: #fff;}
+  100% {background: #18222b;}
+}
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+  0%   {background: #18222b;}
+  25%  {background: #fff;}
+  50%  {background: #18222b;}
+  75%  {background: #fff;}
+  100% {background: #18222b;}
+}

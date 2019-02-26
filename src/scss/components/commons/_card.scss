@@ -1,0 +1,870 @@
+// Layouts
+$card-padding: 1;
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: $border-radius;
+
+  &--shadow {
+    box-shadow: 0 2px 20px 8px transparentize(darken($sermadre-purple, 50), 0.93);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.03em;
+    color: $gray-700;
+    font-weight: 500;
+    font-family: $font-regular;
+  }
+
+  &__head {
+    padding: 0.7em #{$card-padding}em;
+    border-bottom: 1px solid $color-borders;
+
+    h1, h3, h4, h5 {
+      margin: 0;
+    }
+
+  }
+
+  &__block {
+    padding: #{$card-padding}em;
+    border-bottom: 1px solid $color-borders;
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    // Modifiacdores
+    .user-interaction {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+  }
+
+  &__footer {
+    border-top: 1px solid $color-borders;
+    &.padding {
+      padding: #{$card-padding}em;
+    }
+  }
+
+  &__more {
+    display: block;
+    text-align: center;
+    padding: $card-padding - 0.4em #{$card-padding}em;
+    font-family: $font-regular;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transition: $transition;
+    color: $color-txt;
+    @include hover-focus() {
+      text-decoration: none;
+      color: $color-txt;
+      background-color: lighten($gray-500, 25);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1;
+  }
+}
+
+.line-card {
+  border-top: 1px solid $color-borders;
+  margin: #{$card-padding}em -#{$card-padding}em;
+}
+
+@media (max-width: 520px) {
+  .card {
+    margin: 0 -16px;
+    border-radius: 0;
+  }
+}
+
+.content-card {
+  padding: #{$card-padding}em #{$card-padding}em $card-padding - 0.4em;
+  border-bottom: 1px solid $color-borders;
+  position: relative;
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &--options {
+    .menu-points {
+      position: absolute;
+      top: $card-padding - 0.5em;
+      right: $card-padding - 0.7em;
+    }
+    .question {
+      width: calc(100% - 40px);
+    }
+  }
+
+}
+
+.card-single {
+  .content-card {
+    padding: $card-padding - 0.4em #{$card-padding}em #{$card-padding}em;
+  }
+  .question__title {
+    font-size: 1.5em;
+  }
+}
+
+.card-answer {
+  .bar-interaction {
+    margin-top: 10px;
+  }
+}
+
+.card-featured {
+  display: inline-block;
+  max-width: 190px;
+  width: 100%;
+  border: 1px solid $color-borders;
+  margin: 0;
+  @include hover-focus() {
+    text-decoration: none;
+    background-color: lighten($gray-500, 25);
+  }
+  &__image {
+    width: 100%;
+  }
+  &__info {
+    padding: 15px;
+  }
+  &__category {
+    margin: 0 0 8px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    color: $sermadre-rose;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &__title {
+    font-family: $font-regular;
+    font-size: 0.99em;
+    color: $color-txt;
+    margin: 0;
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    min-height: 57px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.card-name {
+  &__figure {
+    position: relative;
+    overflow: hidden;
+    height: 170px;
+    box-shadow: 0 1px lighten($color-borders, 5);
+    @media (min-width: 768px) {
+      height: 240px;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+    transition: all 0.3s;
+  }
+  &__info {
+    padding: 12px 15px 15px;
+  }
+  &__title {
+    color: $color-titles;
+    margin: 0 0 2px;
+    line-height: 1;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__details {
+    line-height: 1.4;
+    margin-top: 4px;
+    p {
+      margin: 0;
+      color: $color-txt;
+      font-size: 0.85rem;
+    }
+  }
+  &__card {
+    border: 1px solid $color-borders;
+    max-width: 240px;
+    width: 100%;
+    border-radius: 4px;
+    display: inline-block;
+    @include hover-focus() {
+      text-decoration: none;
+      .card-name {
+        &__image {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  // modificadore
+  .card-carrusel {
+    &__item {
+      display: inline-block;
+    }
+  }
+  .rating-calification {
+    font-size: 0.75em;
+    color: #FFC107;
+    i {
+      margin-right: 3px;
+    }
+  }
+  .btn {
+    margin-top: 10px;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+// CARD RECETAS
+.card-recipe-main {
+  color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &:after {
+    background-color: transparentize(#000, 0.4);
+  }
+  &__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: blur(10px);
+  }
+  &__box {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @media (min-width: 768px) {
+      padding: 22px;
+    }
+  }
+  &__figure {
+    position: relative;
+    width: 116px;
+    height: 116px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-right: 15px;
+    display: block;
+    @media (min-width: 440px) {
+      width: 135px;
+      height: 135px;
+    }
+    @media (min-width: 560px) {
+      width: 170px;
+      height: 170px;
+    }
+    @media (min-width: 768px) {
+      width: 212px;
+      height: 212px;
+      margin-right: 22px;
+    }
+  }
+  &__flag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+  }
+  &__image {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__info {
+    width: calc(100% - 131px);
+    @media (min-width: 440px) {
+      width: calc(100% - 150px);
+    }
+    @media (min-width: 560px) {
+      width: calc(100% - 185px);
+    }
+    @media (min-width: 768px) {
+      width: calc(100% - 234px);
+    }
+  }
+  &__name-link {
+    color: #fff;
+    @include hover-focus() {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+  }
+  &__name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media (min-width: 768px) {
+      font-size: 1.4em;
+      margin-bottom: 22px;
+    }
+  }
+  &__details {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    @media (min-width: 768px) {
+      font-size: 0.95rem;
+    }
+    div {
+      padding: 0 20px 0 0;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+      @media (min-width: 768px) {
+        padding: 0 25px;
+        border-right: 1px solid transparentize(#fff, 0.8);
+        &:last-child {
+          border-right: 0;
+        }
+        i {
+          margin-right: 4px;
+          font-size: 1.4rem;
+        }
+      }
+    }
+    i, span {
+      vertical-align: middle;
+    }
+  }
+  &__features {
+    display: none;
+    @media (min-width: 440px) {
+      font-size: 0.8rem;
+      display: block;
+      margin-top: 5px;
+      span {
+        display: inline-block;
+        margin-right: 15px;
+      }
+      img {
+        width: 15px;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    @media (min-width: 768px) {
+      font-size: 0.95rem;
+      margin-top: 22px;
+      img {
+        width: 20px;
+      }
+    }
+  }
+  &__actions {
+    display: none;
+    @media (min-width: 560px) {
+      margin-top: 15px;
+      display: flex;
+      .btn {
+        margin-right: 15px;
+        max-width: 140px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    @media (min-width: 768px) {
+      margin-top: 22px;
+    }
+  }
+  &__actions-mobile {
+    width: 100%;
+    margin-top: 15px;
+    @media (min-width: 560px) {
+      display: none;
+    }
+    .row {
+      margin-right: -8px;
+      margin-left: -8px;
+    }
+    .col-6 {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+
+  &__ingredients {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    color: $color-txt;
+    z-index: 1000;
+    transition: $transition;
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (min-width: 768px) {
+      width: calc(100% - 253px);
+      display: flex;
+      align-items: center;
+      top: 0;
+      right: -20%;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+  &__ingredients-main {
+    padding: 22px;
+    margin: auto 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    span {
+      font-family: $font-medium;
+    }
+    ul {
+      list-style: none;
+    }
+    h4 {
+      color: $color-titles;
+      font-family: $font-medium;
+    }
+  }
+
+  //
+  &.show-ingredients {
+    .card-recipe-main {
+      &__ingredients {
+        top: 0;
+        @media (min-width: 768px) {
+          right: 0;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.card-recipe {
+  color: $color-txt;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid $color-borders;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  &__figure {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+    display: block;
+    @media (min-width: 560px) {
+      width: 207px;
+      height: 180px;
+    }
+    @media (min-width: 768px) {
+      width: 230px;
+      height: 202px;
+    }
+    @media (min-width: 1080px) {
+      width: 310px;
+    }
+  }
+  &__flag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+  }
+  &__image {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__info {
+    width: 100%;
+    padding: 15px;
+    @media (min-width: 560px) {
+      width: calc(100% - 207px);
+    }
+    @media (min-width: 768px) {
+      width: calc(100% - 230px);
+    }
+    @media (min-width: 1080px) {
+      width: calc(100% - 310px);
+    }
+  }
+  &__name-link {
+    color: $color-titles;
+    @include hover-focus() {
+      color: $color-titles;
+      text-decoration: none;
+    }
+  }
+  &__name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+    @media (min-width: 768px) {
+      //font-size: 1.4em;
+      font-family: $font-medium;
+      margin-bottom: 12px;
+    }
+  }
+  &__details {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    @media (min-width: 768px) {
+      font-size: 0.95rem;
+    }
+    div {
+      padding: 0 20px 0 0;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+      @media (min-width: 768px) {
+        padding: 0 20px;
+        border-right: 1px solid transparentize(#000, 0.8);
+        &:last-child {
+          border-right: 0;
+        }
+        i {
+          margin-right: 4px;
+          font-size: 1.4rem;
+        }
+      }
+      @media (min-width: 1080px) {
+        padding: 0 25px;
+      }
+    }
+    i, span {
+      vertical-align: middle;
+    }
+  }
+  &__features {
+    display: none;
+    @media (min-width: 440px) {
+      font-size: 0.8rem;
+      display: block;
+      //margin-top: 5px;
+      span {
+        display: inline-block;
+        margin-right: 15px;
+      }
+      img {
+        width: 15px;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    @media (min-width: 768px) {
+      font-size: 0.95rem;
+      margin-top: 12px;
+      img {
+        width: 20px;
+      }
+    }
+  }
+  &__actions {
+    display: flex;
+    margin-top: 10px;
+    .btn {
+      margin-right: 15px;
+      max-width: 140px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    @media (min-width: 768px) {
+      margin-top: 12px;
+    }
+  }
+
+  &__ingredients {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    color: $color-txt;
+    z-index: 1000;
+    transition: $transition;
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (min-width: 768px) {
+      width: calc(100% - 230px);
+      display: flex;
+      align-items: center;
+      top: 0;
+      right: -20%;
+      visibility: hidden;
+      opacity: 0;
+    }
+    @media (min-width: 1080px) {
+      width: calc(100% - 310px);
+    }
+  }
+  &__ingredients-main {
+    padding: 22px;
+    margin: auto 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    span {
+      font-family: $font-medium;
+    }
+    ul {
+      list-style: none;
+    }
+    h4 {
+      color: $color-titles;
+      font-family: $font-medium;
+    }
+  }
+
+  //
+  &.show-ingredients {
+    .card-recipe {
+      &__ingredients {
+        top: 0;
+        @media (min-width: 768px) {
+          right: 0;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// CARD TIENDA
+
+.grid-card-shop {
+  margin-right: 0;
+  margin-left: 0;
+  div[class^="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.card-shop {
+  display: block;
+  color: $color-txt;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px $color-borders;
+  position: relative;
+  z-index: 1;
+  transition: all 0.35s;
+  @include hover-focus() {
+    text-decoration: none;
+    color: $color-txt;
+    background-color: rgba(248, 249, 250, 0.75);
+    z-index: 2;
+    box-shadow: 0 0 0 1px darken($color-borders, 10);
+    .card-shop {
+      &__figure {
+        img {
+          transform: scale(1.1);
+        }
+      }
+      &__name {
+        color: $sermadre-purple;
+      }
+    }
+  }
+  &__figure {
+    position: relative;
+    overflow: hidden;
+    img {
+      width: 100%;
+      transition: all 0.35s;
+    }
+  }
+  &__status {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #FFFFFF;
+    font-family: $font-regular;
+    padding: 8px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    line-height: 1;
+    font-size: 0.88rem;
+    &.urgente {
+      background-color: red;
+    }
+  }
+  &__price {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: transparentize(#000, 0.5);
+    color: #FFFFFF;
+    font-family: $font-regular;
+    padding: 8px;
+    font-size: 0.88rem;
+    border-radius: 4px;
+    line-height: 1;
+    z-index: 1;
+  }
+  &__info {
+    padding: 10px;
+    line-height: 1;
+  }
+  &__name {
+    margin: 0 0 3px;
+    color: $color-titles;
+    font-family: $font-regular;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all 0.35s;
+  }
+  &__time {
+    font-family: $font-regular;
+    color: transparentize($color-txt, 0.3);
+    font-size: 0.88rem;
+  }
+}
+
+.card-store {
+  height: 296px;
+  &__figure {
+    position: relative;
+    overflow: hidden;
+    min-height: 158px;
+    box-shadow: 0 1px lighten($color-borders, 5);
+  }
+  &__image {
+    width: 100%;
+    transition: all 0.3s;
+  }
+  &__info {
+    padding: 8px 10px;
+  }
+  &__price {
+    margin: 0;
+    font-size: 1.2em;
+    font-family: $font-medium;
+    letter-spacing: -0.07em;
+  }
+  &__title {
+    font-size: 0.85em;
+    color: $color-txt;
+    margin: 0;
+    display: block;
+    display: -webkit-box;
+    min-height: 33px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__card {
+    border: 1px solid $color-borders;
+    max-width: 160px;
+    width: 100%;
+    border-radius: 4px;
+    display: inline-block;
+    @include hover-focus() {
+      text-decoration: none;
+      background-color: lighten($gray-500, 25);
+      .card-store {
+        &__image {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  // modificadore
+  .card-carrusel {
+    &__item {
+      display: inline-block;
+      width: 175px !important;
+      height: 265px;
+    }
+  }
+  .btn {
+    margin-top: 7px;
+    padding: 0.3em 0.6em;
+  }
+}

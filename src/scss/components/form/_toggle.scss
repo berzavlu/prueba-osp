@@ -1,0 +1,74 @@
+.toggle-lable {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__info {
+    width: calc(100% - 80px);
+  }
+  &__title {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  &__description {
+    font-size: 0.85em;
+    line-height: 1.2;
+    font-weight: 500;
+    display: inline-block;
+    color: $gray-500;
+  }
+  &__options {
+    display: flex;
+    align-items: center;
+  }
+  &__option {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.input-toggle {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  &__area {
+    display: inline-block;
+    width: 46px;
+    height: 27px;
+    background-color: lighten($gray-200, 30);
+    border-radius: 13px;
+    padding: 2px;
+    transition: all 0.3s;
+  }
+  &__circle {
+    position: relative;
+    width: 23px;
+    height: 23px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.3s;
+    left: 0;
+  }
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer;
+    &:checked {
+      + {
+        .input-toggle__area {
+          background-color: $sermadre-rose;
+          .input-toggle__circle {
+            left: 19px;
+          }
+        }
+      }
+    }
+  }
+}

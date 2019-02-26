@@ -1,0 +1,116 @@
+// Variables
+@import "../variables/grid";
+@import "../helpers/mixins/grid";
+$enable-grid-classes: true !default;
+
+// Mixins
+@import "../helpers/mixins/grid-framework";
+
+// Ascending
+@mixin _assert-ascending($map, $map-name) {
+  $prev-key: null;
+  $prev-num: null;
+  @each $key, $num in $map {
+    @if $prev-num == null {
+      // Do nothing
+    } @else if not comparable($prev-num, $num) {
+      @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    } @else if $prev-num >= $num {
+      @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    }
+    $prev-key: $key;
+    $prev-num: $num;
+  }
+}
+
+// Starts at zero
+@mixin _assert-starts-at-zero($map) {
+  $values: map-values($map);
+  $first-value: nth($values, 1);
+  @if $first-value != 0 {
+    @warn "First breakpoint in `$grid-breakpoints` must start at 0, but starts at #{$first-value}.";
+  }
+}
+
+//// Style
+//// Container widths
+//@if $enable-grid-classes {
+//  .container {
+//    @include make-container();
+//    @include make-container-max-widths();
+//  }
+//}
+//
+//// Fluid container
+//@if $enable-grid-classes {
+//  .container-fluid {
+//    @include make-container();
+//  }
+//}
+
+// Row
+@if $enable-grid-classes {
+  .row {
+    @include make-row();
+  }
+
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+}
+
+// Columns
+@if $enable-grid-classes {
+  @include make-grid-columns();
+}
+
+// Paddings Grid
+.grid-pd-15 {
+  margin-right: -15px;
+  margin-left: -15px;
+  div[class^="col-"] {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.grid-pd-10 {
+  margin-right: -10px;
+  margin-left: -10px;
+  div[class^="col-"] {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+.grid-pd-8 {
+  margin-right: -8px;
+  margin-left: -8px;
+  div[class^="col-"] {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+
+
+.grid-pd-5 {
+  margin-right: -5px;
+  margin-left: -5px;
+  div[class^="col-"] {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+.no-row{
+  margin-left: 0;
+  margin-right: 0;
+}

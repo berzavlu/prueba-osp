@@ -1,0 +1,94 @@
+// Admin bars
+body.admin-bar {
+  &.header-fixed {
+    .header {
+      top: 32px;
+    }
+  }
+  .siderbar-left {
+    height: calc(100vh - 88px);
+  }
+}
+
+// Widgets
+.tagcloud {
+  padding: 1em;
+  a {
+    display: inline-block;
+    padding: 0.6em 1em;
+    border-radius: $border-radius;
+    background: $purple-gray;
+    color: $color-txt;
+    font-size: 0.9em !important;
+    font-family: $font-regular;
+    transition: $transition;
+    margin: 0 8px 8px 0;
+    @include hover-focus() {
+      text-decoration: none;
+      background: $sermadre-purple;
+      color: $white;
+    }
+  }
+}
+
+// PLUGINS
+
+// RATING
+.post-ratings {
+  margin-left: 0;
+}
+
+.rating-calification img {
+  margin: 0 3px;
+}
+
+.post-ratings-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  border-bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  font-size: 0;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+// CONTACT FORM 7
+.wpcf7 {
+  .btn-submit {
+    position: relative;
+    .ajax-loader {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      background-color: lighten($sermadre-purple, 10);
+      background-image: none;
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:before {
+        content: 'Enviando';
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+div.wpcf7-response-output {
+  margin: 1em 0 0;
+  padding: 0.5em;
+  border-width: 1px !important;
+  font-size: 0.9em;
+}

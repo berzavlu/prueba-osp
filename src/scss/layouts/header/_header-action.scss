@@ -1,0 +1,49 @@
+.header-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $height-header;
+  min-width: 40px;
+  position: relative;
+  &__box {
+    position: relative;
+    color: $color-txt;
+    font-size: 1.45em;
+  }
+
+  .badge {
+    position: absolute;
+    top: -8px;
+    left: calc(100% + -11px);
+  }
+
+  // Show
+  &--hover {
+    &:hover {
+      .header-action__interactive {
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__interactive {
+    transform: translateY(-10px);
+    transition: $transition;
+    visibility: hidden;
+    opacity: 0;
+    &.active {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  $height-header: 56px;
+  .header-action {
+    height: $height-header;
+  }
+}

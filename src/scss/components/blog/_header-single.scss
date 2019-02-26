@@ -1,0 +1,91 @@
+.header-single {
+  background-color: $sermadre-purple;
+  color: $white;
+  &__main {
+    padding: 3.2em 0 5em;
+  }
+  &__title {
+    font-size: $font-40;
+    font-weight: 100;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+  }
+  span {
+    color: transparentize($white, 0.3);
+  }
+  a {
+    color: #FFFFFF;
+  }
+
+  // Modificadore
+  .bar-breadcrumb {
+    background-color: transparent;
+    border: 0;
+    span {
+      color: $white;
+    }
+    li:before {
+      background-color: #fff;
+    }
+  }
+
+  .share-icon-inline {
+    float: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-single {
+    &__main {
+      padding: 3em 0 3.5em;
+    }
+    &__title {
+      font-size: 2em;
+    }
+    &__share, &__author {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .header-single {
+    &__main {
+      padding: 2em 0 2.5em;
+    }
+    &__title {
+      font-size: 1.6em;
+    }
+  }
+}
+
+.share-icon-inline {
+  &__icons {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__txt {
+    margin-right: 8px;
+  }
+  a {
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    font-size: 1.1rem;
+    @include hover-focus() {
+      text-decoration: none;
+    }
+  }
+  .icon-twitter,
+  .icon-pinterest {
+    font-size: 0.85em;
+  }
+  .icon-google-plus,
+  .icon-mail {
+    font-size: 0.9em;
+  }
+}

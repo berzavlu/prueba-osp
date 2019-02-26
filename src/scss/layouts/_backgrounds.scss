@@ -1,0 +1,41 @@
+.bg-rose {
+  background-color: $sermadre-rose;
+  color: #ffffff;
+}
+
+.bg-purple {
+  background-color: $sermadre-purple;
+  color: #ffffff;
+}
+
+.bg-gray {
+  background-color: $purple-gray;
+}
+
+.bg-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+  }
+  &--purple {
+    &:after{
+      background-color: #453D64;
+    }
+  }
+}

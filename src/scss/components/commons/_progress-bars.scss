@@ -1,0 +1,29 @@
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  border-radius: $border-radius;
+  display: inline-block;
+
+  span {
+    display: block;
+    height: 100%;
+    transition: $transition;
+    border-radius: $border-radius;
+  }
+
+  &--white {
+    background-color: transparentize(#fff, 0.5);
+    span {
+      background-color: #FFFFFF;
+    }
+  }
+
+}
+
+.progress-number {
+  display: flex;
+  align-items: center;
+  &__porcentage {
+    margin-right: 12px;
+  }
+}

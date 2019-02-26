@@ -1,0 +1,151 @@
+.home-page {
+  display: flex;
+  align-items: center;
+  .brand {
+    width: 240px;
+    margin-top: 8vh;
+  }
+}
+
+.home {
+  &__title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2.6em;
+    font-weight: 700;
+  }
+  &__info, &__main {
+    height: 100vh;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 95%;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  &__info {
+    background: url($cdn + "static/assets/img/home-background.jpg") center/cover $sermadre-purple;
+    color: #ffffff;
+    position: relative;
+    width: calc(50% + 80px);
+    .home__container {
+      position: relative;
+      left: -5%;
+    }
+  }
+  &__main {
+    width: calc(50% - 80px);
+    background-color: #FFFFFF;
+    overflow: auto;
+    .home__container {
+      position: relative;
+      right: 5%;
+    }
+  }
+  .home-onda {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    height: 100%;
+  }
+  &__auth-btn {
+    .btn {
+      margin: 0 4px;
+      min-width: 150px;
+    }
+  }
+  &__social {
+    position: fixed;
+    bottom: 23px;
+    left: 23px;
+    line-height: 1;
+    color: #ffffff;
+    font-size: 0.9em;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    i {
+      display: block;
+    }
+    a {
+      vertical-align: middle;
+      display: inline-block;
+      color: #ffffff;
+      font-size: 1.5em;
+      margin-right: 3px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.states-home {
+  max-width: 440px;
+  margin: 0 auto;
+  &__info {
+    margin: 0 auto 1.35em;
+    max-width: 266px;
+    width: 100%;
+  }
+  &__name {
+    margin-top: 0.6em;
+  }
+}
+
+.slider-stats {
+  margin: 28px 0 50px;
+  font-size: 1.1em;
+  line-height: 1;
+  min-height: 102px;
+  text-align: center;
+}
+
+.stats {
+  &__count {
+    font-size: 2.75em;
+    font-family: $font-light;
+    font-weight: 600;
+    letter-spacing: 2.1px;
+  }
+  &__description {
+    margin: 15px 0 19px;
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+  &__users {
+    .avatar-group__item {
+      width: 30px;
+      height: 30px;
+      left: -10px;
+      margin-right: -10px;
+    }
+  }
+}
+
+.legals {
+  font-size: 0.85rem;
+  color: $color-txt;
+  margin: 0 0 1em;
+  &__links {
+    @media screen and (max-width: 480px) {
+      padding: 0px 15px;
+    }
+    a {
+      color: $color-txt;
+      margin: 0 5px;
+    }
+  }
+  &__copyright {
+    margin-top: 0.6em;
+  }
+}

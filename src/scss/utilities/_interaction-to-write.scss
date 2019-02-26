@@ -1,0 +1,32 @@
+.interaction-to-write {
+  font-size: 1.1em;
+  display: inline-block;
+  position: relative;
+  font-weight: 500;
+  &__txt {
+    display: inline-block;
+  }
+  &__line {
+    position: absolute;
+    width: 1px;
+    height: 70%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: $color-titles;
+    right: -3px;
+    animation: to-write 0.8s infinite;
+  }
+}
+
+@keyframes to-write {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

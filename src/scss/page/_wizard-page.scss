@@ -1,0 +1,184 @@
+.wizard-page {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+  .card {
+    min-height: 565px;
+    @media screen and (max-width: 480px) {
+      min-height: 300px;
+    }
+    &__body {
+      overflow-x: hidden;
+      // max-height: 480px;
+    }
+
+    .wizard-points {
+      margin-bottom: 0.65em;
+    }
+  }
+
+}
+
+.wizard-points {
+  text-align: center;
+  padding: 15px 0 0;
+  line-height: 1;
+  width: 100%;
+  &__circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 3px;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 0 1px transparent;
+    transition: all 0.3s;
+    cursor: pointer;
+    &.active {
+      box-shadow: 0 0 0 1px #ffffff;
+      background-color: $sermadre-rose;
+    }
+  }
+}
+
+.title-steps {
+  margin-bottom: 1.9em;
+  margin-top: 1.4em;
+  color: $color-titles;
+}
+
+.wizard-box {
+  padding: 1.5em 0.6em .5em;
+  min-height: 453px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  &__step {
+    width: 100%;
+    .square-select__main {
+      cursor: pointer;
+      z-index: 99;
+    }
+  }
+}
+
+.states-box {
+  text-align: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  @media screen and (max-width: 480px) {
+    .col-4 {
+      padding: 0px 5px;
+    }
+  }
+}
+
+.state-step {
+  display: inline-block;
+  margin: 0;
+  &__name {
+    margin: 0.8em 0 0;
+    cursor: pointer;
+    @media screen and (max-width: 480px) {
+      line-height: 15px;
+      word-break: inherit;
+      font-size: 12px;
+      display: table-caption;
+    }
+  }
+  &__check{
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: $sermadre-purple;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.93em;
+    top: 0;
+    right: 0;
+    transform: scale(0);
+    transition: $transition;
+  }
+  .circle-icon {
+    box-shadow: 0 0 0 0 $sermadre-purple;
+    transition: all 0.3s;
+    cursor: pointer;
+    width: 90px;
+    height: 90px;
+    position: relative;
+    @media screen and (max-width: 480px) {
+      width: 69px;
+      height: 69px;
+      padding: 0px;
+      img {
+        width: 45%;
+        height: 45%;
+      }
+    }
+  }
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    &:checked {
+      + .state-step__main {
+        .circle-icon {
+          box-shadow: 0 0 0 3px $sermadre-purple;
+        }
+        .state-step__name {
+          color: $sermadre-purple;
+        }
+        .state-step__check {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+.link-omitir {
+  margin: 2em 0 5em;
+  display: inline-block;
+  color: darken($sermadre-purple, 10);
+  font-weight: 700;
+  font-size: 0.9em;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.secuencialBox {
+  display: flex;
+  flex-flow: row nowrap;
+  /*transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);*/
+  .card__body {
+    &:nth-child(1) {
+      flex: 0 0 100%;
+    }
+    &:nth-child(2) {
+      flex: 0 0 100%;
+    }
+    &:nth-child(3) {
+      flex: 0 0 100%;
+    }
+    &:nth-child(4) {
+      flex: 0 0 100%;
+      display: flex;
+    }
+    .wizard-box {
+      @media screen and (max-width: 480px) {
+        min-height: auto;
+      }
+    }
+  }
+}

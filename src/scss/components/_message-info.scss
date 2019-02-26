@@ -1,0 +1,34 @@
+.message-info {
+  position: relative;
+  margin: 0 -15px -1px;
+  width: calc(100% + 30px);
+  padding: 9px 40px 9px 15px;
+  z-index: 1;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  font-size: 0.92rem;
+  line-height: 1.45;
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    opacity: 0.5;
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+  // Tipos
+  &--error {
+    background-color: transparentize(red, 0.9);
+    border-color: transparentize(red, 0.85);
+    color: red;
+  }
+  &--warning {
+    background-color: transparentize(#ffeeba, 0.9);
+    border-color: transparentize(#ffeeba, 0.85);
+    color: #856404;
+  }
+}

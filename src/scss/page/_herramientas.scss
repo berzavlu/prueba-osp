@@ -1,0 +1,57 @@
+.herramientas {
+  &__list {
+    padding: 1em 1em 0em 1em;
+    a {
+      text-decoration: none;
+      color: #343a40;
+    }
+    &--item {
+      box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.25);
+      border-radius: 0.25rem;
+      padding: 1em;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 1em;
+      h3 {
+        font-size: 1em;
+      }
+      .circle-icon {
+        background-color: #f7f7fb;
+        margin-bottom: 10px;
+        transition: all .2s ease-in-out;
+        i {
+          font-size: 2em;
+        }
+      }
+      p {
+        font-size: .9em;
+        line-height: 1.5em;
+        user-select: none;
+        transition: all .2s ease-in-out;
+      }
+      button {
+        position: absolute;
+        bottom: -45px;
+        left: 0;
+        right: 0;
+        width: 145px;
+        margin: 0 auto;
+        transition: all .3s ease 0s;
+      }
+      &:hover {
+        user-select: none;
+        cursor: pointer;
+        .circle-icon {
+          background-color: #7178c6;
+          color: #fff;
+        }
+        p {
+          opacity: .2;
+        }
+        button {
+          bottom: 10px;
+        }
+      }
+    }
+  }
+}

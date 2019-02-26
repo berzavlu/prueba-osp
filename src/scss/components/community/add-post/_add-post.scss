@@ -1,0 +1,187 @@
+.add-post {
+  position: relative;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 15px;
+
+  @media (min-width: 768px) {
+    border-radius: 4px;
+  }
+
+  &__main {
+    position: relative;
+  }
+
+  &__title-input {
+    border: 0;
+    min-height: initial;
+    line-height: 1.4;
+    font-size: 1.4em;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    display: block;
+    font-family: $font-medium;
+    @include placeholder {
+      color: transparentize($color-txt, 0.35);
+    }
+    @media (min-width: 768px) {
+      font-size: 1.35em;
+      height: 27px;
+    }
+  }
+
+  &__header {
+    position: relative;
+    padding: 0 0 15px;
+  }
+
+  &__content{
+    border: 0;
+    color: $color-txt;
+    overflow: hidden;
+    resize: none;
+    font-size: 1rem;
+    font-family: $font-regular;
+    @include placeholder {
+      color: transparentize($color-txt, 0.35);
+    }
+  }
+
+  &__body {
+    padding: 15px 0 15px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -15px;
+      right: -15px;
+      top: 0;
+      width: calc(100% + 30px);
+      height: 1px;
+      background-color: $color-borders;
+    }
+    .main-content {
+      color: $color-txt;
+      padding: 0;
+    }
+  }
+
+  &__options {
+    padding: 15px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -15px;
+      right: -15px;
+      top: 0;
+      width: calc(100% + 30px);
+      height: 1px;
+      background-color: $color-borders;
+    }
+  }
+
+  &__footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @media (min-width: 768px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__submit {
+    background-color: #ffffff;
+    width: 100%;
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
+    @media (min-width: 768px) {
+      width: initial;
+    }
+    button {
+      width: 100%;
+      min-width: 125px;
+    }
+  }
+
+  &__drag {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  // Tipos
+  &--drag {
+    .add-post {
+      &__drag {
+        display: block;
+      }
+    }
+  }
+
+  // Modificadores
+  .select-custom {
+    width: 100%;
+    margin-top: 8px;
+    @media (min-width: 768px) {
+      width: initial;
+      margin-top: 0;
+    }
+  }
+
+  .info-box {
+    margin-bottom: 15px;
+  }
+}
+
+.box-drag {
+  font-size: 16px;
+  font-family: $font-medium;
+  background-color: rgba(255, 255, 255, .95);
+  border: 2px dashed $sermadre-purple;
+  border-radius: 3px;
+  color: darken($sermadre-purple, 5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wysiwyg-editor {
+  &__body {
+    padding: 10px 0;
+    position: relative;
+    min-height: 122px;
+    .public-DraftEditorPlaceholder-inner {
+      position: absolute;
+      color: transparentize($color-txt, 0.3);
+    }
+    b {
+      color: $color-txt;
+    }
+  }
+}
+
+@import "add-image";
+@import "add-post-modal";
+@import "add-post-options";
+@import "card-add-post";
+@import "add-post-validations";

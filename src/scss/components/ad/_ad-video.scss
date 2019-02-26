@@ -1,0 +1,38 @@
+.ad-video {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  &__main {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $purple-gray;
+    padding: 10px 35px;
+
+    h4 {
+      text-transform: uppercase;
+      font-size: 2em;
+      margin-bottom: 0.4em;
+      font-family: $font-light;
+      line-height: 1.2;
+      span {
+        display: block;
+        color: $sermadre-rose;
+      }
+    }
+    p {
+      font-size: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__video {
+    width: 50%;
+    video {
+      width: 100%;
+      display: block;
+    }
+  }
+}

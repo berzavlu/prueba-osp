@@ -1,0 +1,69 @@
+.card-profile {
+  background-color: #FFFFFF;
+  &__banner {
+    display: none;
+  }
+
+  @media (min-width: 961px) {
+    position: relative;
+    &__container {
+      width: 100%;
+      max-width: 1076px;
+      margin: 0 auto;
+      padding-top: 51px;
+    }
+    &__banner {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      .bg-absolute {
+        background-size: 150%;
+        background-position: 50% 64%;
+        filter: blur(30px);
+        width: calc(100% + 80px);
+        height: calc(100% + 80px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .bar-breadcrumb {
+      background-color: transparent;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      a {
+        color: #ffffff;
+      }
+    }
+  }
+
+  // Modifiacores
+  .nav-horizontal {
+    border-top: 1px solid $color-borders;
+    text-align: center;
+    @media (min-width: 961px) {
+      padding: 0 15px;
+      text-align: left;
+      &__link {
+        color: #FFFFFF;
+        @include hover-focus() {
+          color: #FFFFFF;
+          background-color: transparentize(#FFFFFF, 0.92);
+        }
+        &.active {
+          color: #FFFFFF;
+          &:before {
+            background-color: #FFFFFF;
+          }
+        }
+      }
+      border-top: 0;
+    }
+  }
+}

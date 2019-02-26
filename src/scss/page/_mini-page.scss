@@ -1,0 +1,19 @@
+.mini-banner{
+  padding: 4.5em 0 9em;
+  min-height: 248px;
+  background-image: url($cdn +'static/assets/img/bg-baby-horizontal.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  @media screen and (max-width: 480px) {
+    padding: 2.5em 0 2.5em;
+    min-height: 185px;
+  }
+  .brand{
+    width: 225px;
+  }
+}
+
+.card-page{
+  max-width: 752px;
+  margin: -5em auto 0;
+}

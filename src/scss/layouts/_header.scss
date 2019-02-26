@@ -1,0 +1,117 @@
+// Variables
+@import "../../scss/_variables-commons";
+
+$height-header: 58px;
+
+// mixnins
+@import "../../scss/_mixins-commons";
+
+// Style
+.header {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $height-header;
+  position: fixed;
+  top: 0;
+  left: 0;
+  &__item {
+    margin: 0 0.7em;
+  }
+  &__name-page {
+    font-family: $font-regular;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &__left {
+    max-width: 910px;
+    width: calc(100% - 630px);
+  }
+}
+
+//Modos
+body.header-fixed {
+  padding-top: 58px;
+  .header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    box-shadow: 0 0 0 1px $purple-gray;
+  }
+}
+
+.header-group {
+  display: flex;
+  align-items: center;
+}
+
+.header-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.header-btns {
+  display: flex;
+}
+
+// Responsive header
+@media (max-width: 1360px) {
+  .header {
+    &__left {
+      max-width: 910px;
+      width: calc(100% - 427px);
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .header {
+    &__left {
+      //width: calc(100% - 490px);
+    }
+  }
+}
+
+@media (max-width: 888px) {
+  .header {
+    &__hidden-mobile {
+      display: none;
+    }
+    &__left {
+      width: 100%;
+      justify-content: space-between;
+    }
+    &__right {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  $height-header: 56px;
+  body.header-fixed {
+    padding-top: $height-header;
+  }
+  .header {
+    height: $height-header;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    .brand {
+      width: 156px;
+    }
+  }
+}
+
+// Componetes de header
+@import "header/header-search";
+@import "header/header-action";
+@import "header/header-menu";
+@import "header/header-buttons";

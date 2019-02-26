@@ -1,0 +1,28 @@
+.block-categories {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 8px 8px 0 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    display: block;
+    padding: 0.6em 1em;
+    border-radius: $border-radius;
+    background: $purple-gray;
+    color: $color-txt;
+    font-size: 0.9em;
+    font-family: $font-regular;
+    transition: $transition;
+    @include hover-focus() {
+      text-decoration: none;
+      background: $sermadre-purple;
+      color: $white;
+    }
+  }
+}

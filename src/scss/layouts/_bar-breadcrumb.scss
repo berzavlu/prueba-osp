@@ -1,0 +1,46 @@
+.bar-breadcrumb {
+  background-color: #FFFFFF;
+  padding: .95em 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.breadcrumb {
+  list-style: none;
+  font-size: 0.88em;
+  display: flex;
+  li {
+    display: inline-block;
+    margin-right: 25px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: -18px;
+      border-radius: 3px;
+      background-color: $sermadre-purple;
+    }
+    &:last-child {
+      margin-right: 0;
+      &:before {
+        display: none;
+        margin-right: 0;
+      }
+      a span{
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+  a {
+    color: lighten($color-txt, 10);
+  }
+}

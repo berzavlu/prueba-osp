@@ -1,0 +1,97 @@
+@media (max-width: 600px) {
+  .widget-page--shared {
+    display: none;
+  }
+}
+
+.social-horizontal {
+  list-style: none;
+  display: flex;
+  li {
+    margin-right: 9px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .btn {
+    display: inline-block;
+    //min-width: 125px;
+    min-width: 50px;
+    padding: 10px;
+    @media (min-width: 520px) {
+      min-width: 70px;
+    }
+    @media (min-width: 650px) {
+      min-width: 110px;
+    }
+    @media (min-width: 768px) {
+      min-width: 115px;
+    }
+    i {
+      font-size: 1.3em;
+      @media (max-width: 650px) {
+        margin: 0;
+      }
+    }
+    span {
+      display: none;
+      @media (min-width: 650px) {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// Share minimal (solo iconos)
+
+.share-clean {
+  text-align: center;
+  margin: 1.8em 0;
+  &__title {
+    color: $color-titles;
+    font-family: $font-regular;
+    margin-bottom: 1.5em;
+  }
+}
+
+.share-fixed-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 100;
+  @media (min-width: 600px) {
+    display: none;
+  }
+  &__item {
+    //width: 20%;
+    //padding: 9px;
+    text-align: center;
+    font-size: 1.5em;
+    @include hover-focus() {
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .single.single-post {
+    padding-bottom: 43px;
+  }
+}
+
+.action-whatsapp {
+  display: inline-block;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+//.action-emial {
+//  //display: none;
+//  @media (min-width: 768px) {
+//    display: inline-block;
+//  }
+//}

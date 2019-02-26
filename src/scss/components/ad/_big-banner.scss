@@ -1,0 +1,186 @@
+.big-banner {
+  position: relative;
+
+  &__cover img {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    display: block;
+  }
+
+  &__cover-link {
+    overflow: hidden;
+    display: block;
+  }
+
+  &__info {
+    padding: 15px;
+  }
+
+  &__type {
+    display: none;
+  }
+
+  &__cta {
+    display: none;
+    padding-top: 15px;
+  }
+
+  &__description {
+    margin-top: 15px;
+  }
+
+  &__brand {
+    display: none;
+    padding-bottom: 10px;
+  }
+
+  &__brand-link {
+    display: inline-block;
+  }
+
+  &__logo {
+    max-height: 56px;
+    max-width: 230px;
+  }
+
+  // Moficador
+  .menu-points {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    i {
+      color: #ffffff;
+      transform: rotate(90deg);
+      display: inline-block;
+    }
+  }
+
+  @media (min-width: 520px) {
+    &__cover-link {
+      overflow: hidden;
+      display: inline-block;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+  }
+
+  @media (min-width: 600px) {
+    display: flex;
+    min-height: 250px;
+
+    &__cover-link {
+      width: 50%;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 4px;
+    }
+
+    &__cover img {
+      width: initial;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__info {
+      width: 50%;
+      text-align: center;
+      padding: 40px 15px 15px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    &__type {
+      display: block;
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      color: darken($gray-500, 12);
+      font-size: 0.95em;
+    }
+
+    &__cta {
+      display: block;
+      .btn {
+        max-width: 200px;
+        width: 100%;
+      }
+    }
+
+    &__brand {
+      display: block;
+      padding-bottom: 0;
+    }
+
+    &__description {
+      margin-top: 10px;
+    }
+
+    // Moficador
+    .mini-profile-ads {
+      display: none;
+    }
+    .menu-points {
+      i {
+        color: $gray-600;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    &__cover-link {
+      width: calc(100% - 250px);
+    }
+
+    &__info {
+      width: 250px;
+    }
+  }
+
+  @media (min-width: 960px) {
+
+    &__cover-link {
+      width: calc(100% - 315px);
+    }
+
+    &__info {
+      width: 315px;
+    }
+  }
+}
+
+.mini-profile-ads {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    width: 35px;
+    margin-right: 10px;
+  }
+
+  &__info {
+    line-height: 1.1;
+  }
+
+  &__type {
+    color: $gray-500;
+  }
+
+  &__name {
+    margin-bottom: 0;
+    font-family: $font-medium;
+    color: $color-titles;
+    font-size: 1.2em;
+    @include hover-focus() {
+      color: darken($color-titles, 10);
+      text-decoration: none;
+    }
+  }
+
+  .btn {
+    padding: 0.4rem 0.95rem;
+  }
+}

@@ -1,0 +1,8 @@
+.message-alert {
+  font-size: 14px;
+  position: relative;
+  top: 6px;
+  &--error {
+    color: red;
+  }
+}

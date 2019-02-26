@@ -1,0 +1,20 @@
+.header-btns {
+  .btn {
+    min-width: 126px;
+    margin: 0 4px;
+  }
+}
+
+@media (max-width: 960px) {
+  .header-btns {
+    &__hidden {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 888px) {
+  .header-btns {
+    display: none;
+  }
+}

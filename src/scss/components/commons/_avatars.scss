@@ -1,0 +1,111 @@
+.user-avatar {
+  position: relative;
+  display: inline-block;
+  &__type {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    font-size: 1.2em;
+  }
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0;
+  background-color: $purple-gray;
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+.online-point {
+  background-color: #40b330;
+  display: inline-block;
+  width: 26%;
+  height: 26%;
+  border-radius: 50%;
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  box-sizing: content-box;
+  border: 2px solid #FFFFFF;
+}
+
+span[class*="type-ico"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  background-image: url($cdn +'static/assets/img/icons-color/status-user.svg');
+  background-size: cover;
+}
+
+.type-ico {
+  &-specialist {
+    background-position: 20px;
+  }
+  &-planning {
+    background-position: 80px;
+  }
+  &-mom {
+    background-position: 60px;
+  }
+  &-pregnant {
+    background-position: 40px;
+  }
+}
+
+.avatar-group {
+  display: inline-block;
+  &__item {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #FFFFFF;
+    display: inline-block;
+    position: relative;
+    left: -9px;
+    margin-right: -9px;
+    vertical-align: middle;
+    &:nth-child(1) {
+      left: 0;
+      margin-right: 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+}
+
+.mini-info-user {
+  &__avatar {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+  &__name {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    font-family: $font-regular;
+    margin-bottom: 0;
+  }
+}

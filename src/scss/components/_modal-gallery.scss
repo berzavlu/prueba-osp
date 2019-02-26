@@ -1,0 +1,162 @@
+.modal-gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparentize($color-base, 0.15);
+  overflow: auto;
+  padding: 1em 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition;
+  &__close {
+    position: absolute;
+    //top: 18px;
+    //right: 18px;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.4em;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: $transition;
+    z-index: 10;
+    &:hover {
+      background-color: transparentize(#fff, 0.8);
+    }
+  }
+
+  &__box {
+    max-width: calc(100% - 30px);
+    position: relative;
+    margin: auto;
+    transform: scale(0.9);
+    transition: $transition;
+    background-color: #000;
+    border-radius: 4px;
+    @media (min-width: 992px) {
+      min-height: 150px;
+      min-width: 150px;
+    }
+    @media (min-width: 768px) {
+      @include hover {
+        .modal-gallery__arrows {
+          opacity: 1;
+        }
+      }
+    }
+    &--loading {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  &__arrows {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    font-size: 1.5em;
+    color: #ffffff;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: $transition;
+    @media (min-width: 768px) {
+      opacity: 0;
+      font-size: 2.2em;
+    }
+  }
+
+  &--prev {
+    left: 0px;
+  }
+
+  &--next {
+    right: 0px;
+  }
+
+  &__image {
+    border-radius: 4px;
+    max-width: 100%;
+    @media (min-width: 768px) {
+      max-height: calc(100vh - 60px);
+    }
+    @media (min-width: 992px) {
+      min-height: 450px;
+    }
+  }
+
+  &__head {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: $padding;
+    z-index: 1;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 72px;
+      width: 100%;
+      border-radius: 4px;
+      background: linear-gradient(transparentize(#000, 0.6), transparent);
+      z-index: -1;
+    }
+  }
+
+  &__footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: $padding;
+    z-index: 1;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 72px;
+      width: 100%;
+      border-radius: 4px;
+      background: linear-gradient(transparent, transparentize(#000, 0.6));
+      z-index: -1;
+    }
+  }
+
+  // Modificador
+  .user-interaction {
+    margin: 0;
+    &__name, &__date {
+      color: #ffffff;
+    }
+  }
+}
+
+body.gallery--active {
+  overflow: hidden;
+  .modal-gallery {
+    opacity: 1;
+    visibility: visible;
+    &__box {
+      transform: scale(1);
+    }
+  }
+}

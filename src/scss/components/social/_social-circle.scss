@@ -1,0 +1,36 @@
+.social-circle-gray {
+  list-style: none;
+  margin-bottom: 0;
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.1em;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    border: 1px solid darken($gray-500, 5);
+    color: $gray-600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.96rem;
+    transition: $transition;
+    &:hover, &:focus {
+      text-decoration: none;
+      border: 1px solid $sermadre-purple;
+      background-color: $sermadre-purple;
+      color: #FFFFFF;
+    }
+  }
+
+}

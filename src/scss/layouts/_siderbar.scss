@@ -1,0 +1,243 @@
+// Variables
+@import "../variables-commons";
+// Mixins
+@import "../mixins-commons";
+
+// Style
+.siderbar-left {
+  position: fixed;
+  height: calc(100vh - 56px);
+  width: 250px;
+  left: -250px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  overflow: auto;
+  background-color: #ffffff;
+  z-index: 50;
+  transition: $transition;
+
+  @media (min-width: 1360px) {
+    border-right: 1px solid #464a772b;
+  }
+
+  &__item {
+    border-bottom: 1px solid transparentize($color-borders, 0.5);
+    padding: 0.6em 0;
+  }
+  &__title {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    opacity: 0.8;
+    padding: 3px 12px 11px;
+    margin-bottom: 0;
+  }
+
+  &__footer {
+    padding: 18px;
+  }
+  // modificadores
+  .info-state-mother {
+    padding: 0.5em;
+  }
+}
+
+.badge-circle {
+  background-color: $sermadre-rose;
+  color: #fff;
+  padding: .3em .4em;
+  line-height: 17px;
+  border-radius: 15px;
+  display: inline-block;
+  min-width: 21px;
+  font-size: .85em;
+  font-family: sans-serif;
+  height: 21px;
+  text-align: center;
+}
+
+.mini-group {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  color: #ffffff;
+  height: 50px;
+  margin-bottom: 10px;
+  display: block;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+    background-color: transparentize(#000000, 0.65);
+  }
+
+  &__image {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__name {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin: auto;
+    color: #ffffff;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-family: $font-regular;
+    font-weight: 100;
+  }
+  .badge-circle {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    margin: auto;
+  }
+
+  &:hover {
+    &:after {
+      background-color: transparentize(#000000, 0.5);
+    }
+  }
+}
+
+.list-menu {
+  list-style: none;
+  margin: 0;
+  //i {
+  //  color: $color-txt;
+  //}
+  i {
+    font-size: 1.1em;
+    &.icon-alphabet {
+      font-size: 17px;
+    }
+  }
+  &__item {
+    position: relative;
+    color: $color-txt;
+    padding: 10px 18px;
+    display: inline-block;
+    width: 100%;
+    font-size: 0.95em;
+    transition: $transition;
+    font-family: $font-regular;
+    @include hover-focus() {
+      background-color: transparentize($purple-gray, 0.7);
+      text-decoration: none;
+    }
+    &.active {
+      background-color: $purple-gray;
+      color: $color-titles;
+    }
+  }
+
+  &__name {
+    margin-left: 20px;
+  }
+
+  .badge-circle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 18px;
+    margin: auto;
+  }
+
+}
+
+.hidden-mobile {
+  position: fixed;
+  top: 58px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 58px);
+  display: none;
+  z-index: 40;
+}
+
+// Alterations
+body.siderbar-left--active-desktop {
+  .box-page {
+    &__main {
+      padding-left: 250px;
+    }
+  }
+  .siderbar-left {
+    left: 0;
+  }
+}
+
+@media (max-width: 1360px) {
+  body.siderbar-left--active-desktop {
+    .box-page {
+      &__main {
+        padding-left: 0;
+      }
+    }
+    .siderbar-left {
+      left: -250px;
+    }
+  }
+
+  .siderbar-left {
+    top: 0;
+    z-index: 120;
+    height: 100vh;
+    max-width: 300px;
+    width: 80%;
+    left: -300px;
+  }
+
+  .hidden-mobile {
+    top: 0;
+    height: 100vh;
+    z-index: 110;
+    background-color: transparentize($color-txt, 0.5);
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+  }
+
+  body.siderbar-left--active-desktop {
+    .siderbar-left {
+      left: -300px;
+    }
+  }
+
+  body.siderbar-left--active-mobile {
+    overflow: hidden;
+
+    .hidden-mobile {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+    }
+    .siderbar-left {
+      left: 0;
+    }
+  }
+
+}
+
+@media (min-width: 888px) {
+  .siderbar-show-mobile {
+    display: none;
+  }
+}
+
+// Componetes de siderbar
+@import "siderbar/profile-siderbar";
+@import "siderbar/mostActive";
+@import "siderbar/busines";

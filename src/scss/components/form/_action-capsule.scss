@@ -1,0 +1,48 @@
+.action-capsule {
+  background-color: $light-gray;
+  border-radius: 19px;
+  //width: 111px;
+  //width: 36px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 9px;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  margin: 0 4px;
+  transition: $transition;
+  position: relative;
+  overflow: hidden;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  i {
+    font-size: 20px;
+    line-height: 36px;
+    vertical-align: top;
+  }
+  &__txt {
+    line-height: 36px;
+    vertical-align: top;
+    margin-left: 5px;
+    //display: none;
+  }
+  //&:hover {
+  //  color: $sermadre-purple;
+  //  background-color: darken($light-gray, 3);
+  //}
+  &:active {
+    //color: #ffffff;
+    //background-color: $sermadre-purple;
+    //transform: scale(0.95);
+  }
+
+  @media (min-width: 768px){
+
+  }
+}

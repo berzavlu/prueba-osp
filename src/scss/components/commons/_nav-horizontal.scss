@@ -1,0 +1,54 @@
+.nav-horizontal {
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    outline: 1px solid slategrey;
+  }
+  &__main {
+    white-space: nowrap;
+    display: inline-block;
+    margin: auto;
+  }
+  &__item {
+    display: inline-block;
+  }
+  &__link {
+    color: $color-titles;
+    font-family: $font-medium;
+    display: block;
+    padding: 14px 20px;
+    position: relative;
+    font-size: 0.88rem;
+    @media (min-width: 961px) {
+      padding: 12px 20px;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0%;
+      height: 4px;
+      transform: translateX(-50%);
+      background-color: $sermadre-purple;
+      transition: $transition;
+    }
+    @include hover-focus() {
+      text-decoration: none;
+      color: $sermadre-purple;
+    }
+    &.active {
+      color: $sermadre-purple;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}

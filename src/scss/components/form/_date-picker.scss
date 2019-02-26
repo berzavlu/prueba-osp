@@ -1,0 +1,158 @@
+.selectBornDate {
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #EAE9EE;
+  padding: 5px 0px;
+  user-select: none;
+  width: 220px;
+  position: absolute;
+  padding-left: 5px;
+  &--arrows {
+    &--up {
+      height: 20px;
+      text-align: center;
+      display: inline-block;
+      i {
+        cursor: pointer;
+        font-size: 22px;
+        color: #7178C6;
+      }
+      &:nth-child(1) {
+        width: 45px;
+        height: 20px;
+      }
+      &:nth-child(2) {
+        width: 105px;
+        height: 20px;
+      }
+      &:nth-child(3) {
+        width: 40px;
+        height: 20px;
+        padding-left: 15px;
+      }
+    }
+    &--bottom {
+      height: 20px;
+      text-align: center;
+      display: inline-block;
+      i {
+        cursor: pointer;
+        font-size: 22px;
+        color: #7178C6;
+      }
+      &:nth-child(1) {
+        width: 45px;
+        height: 20px;
+      }
+      &:nth-child(2) {
+        width: 105px;
+        height: 20px;
+      }
+      &:nth-child(3) {
+        width: 40px;
+        height: 20px;
+        padding-left: 15px;
+      }
+    }
+  }
+  &__option {
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 115px;
+    span {
+      display: block;
+      width: auto;
+      margin: 0px;
+      opacity: .5;
+      cursor: pointer;
+      line-height: 22px;
+      width: 80%;
+      margin-right: 10px;
+      margin-left: 10px;
+      &:hover {
+        opacity: 1;
+        color: $color-titles;
+      }
+    }
+    &--day {
+      width: 50px;
+      text-align: center;
+      span {
+        width: 18px;
+        cursor : -webkit-grab;
+        cursor : -moz-grab;
+        cursor : -o-grab;
+        cursor : grab;
+        &:active {
+          cursor : -webkit-grabbing;
+          cursor : -moz-grabbing;
+          cursor : -o-grabbing;
+          cursor : grabbing;
+        }
+      }
+      .selectedBorn {
+        font-weight: bold;
+        opacity: 1;
+      }
+    }
+    &--month {
+      text-align: center;
+      width: 115px;
+      span {
+        width: 89px;
+        cursor : -webkit-grab;
+        cursor : -moz-grab;
+        cursor : -o-grab;
+        cursor : grab;
+        &:active {
+          cursor : -webkit-grabbing;
+          cursor : -moz-grabbing;
+          cursor : -o-grabbing;
+          cursor : grabbing;
+        }
+      }
+      .selectedBorn {
+        font-weight: bold;
+        opacity: 1;
+      }
+    }
+    &--year {
+      width: 70px;
+      text-align: center;
+      span {
+        width: 45px;
+        cursor : -webkit-grab;
+        cursor : -moz-grab;
+        cursor : -o-grab;
+        cursor : grab;
+        &:active {
+          cursor : -webkit-grabbing;
+          cursor : -moz-grabbing;
+          cursor : -o-grabbing;
+          cursor : grabbing;
+        }
+      }
+      .selectedBorn {
+        font-weight: bold;
+        opacity: 1;
+      }
+    }
+    &--wrapDay {
+      overflow: hidden;
+      width: 32px;
+      margin-right: 10px;
+      padding-left: 3px;
+    }
+    &--wrapMonth {
+      width: 95px;
+      overflow: hidden;
+      margin-right: 8px;
+    }
+    &--wrapYear {
+      width: 50px;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+  }
+}

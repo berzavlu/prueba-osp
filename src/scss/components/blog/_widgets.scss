@@ -1,0 +1,103 @@
+.widget-page {
+  img {
+    //max-width: 100%;
+  }
+  .card__head {
+    + ul {
+      padding: 1em 1em 1em 2.2em;
+    }
+  }
+}
+
+.tagcloud {
+  padding: 1em;
+  a {
+    display: inline-block;
+    padding: 0.6em 1em;
+    border-radius: $border-radius;
+    background: $purple-gray;
+    color: $color-txt;
+    font-size: 0.9em !important;
+    font-family: $font-regular;
+    transition: $transition;
+    margin: 0 8px 8px 0;
+    @include hover-focus() {
+      text-decoration: none;
+      background: $sermadre-purple;
+      color: $white;
+    }
+  }
+}
+
+.mini-post {
+  display: flex;
+  margin-bottom: 15px;
+  color: $gray-600;
+  @include hover-focus() {
+    text-decoration: none;
+
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &__figure {
+    width: 65px;
+    height: 65px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__title {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    color: inherit;
+    display: -webkit-box;
+    font-size: 0.95em;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 15px;
+    text-overflow: ellipsis;
+    width: calc(100% - 65px);
+    max-height: 55px;
+  }
+}
+
+// widget form
+.wpcf7 {
+  .btn-submit {
+    position: relative;
+    .ajax-loader {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      background-image: none;
+      background-color: lighten($sermadre-purple, 10);
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:before {
+        content: 'Enviando';
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+div.wpcf7-response-output{
+  margin: 1em 0 0;
+  padding: 0.5em;
+  border-width: 1px !important;
+  font-size: 0.9em;
+}

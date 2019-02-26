@@ -1,0 +1,76 @@
+.header-menu {
+  font-size: 0.86em;
+  position: relative;
+  transition: $transition;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0 -0.7em;
+  &__link {
+    height: $height-header;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-txt;
+    transform: $transition;
+    font-family: $font-medium;
+    &.active {
+      box-shadow: inset 0px -2px 0px 0px $sermadre-rose;
+      color: $sermadre-rose;
+      i {
+        color: $sermadre-rose;
+      }
+    }
+    @include hover-focus {
+      text-decoration: none;
+      background-color: $gray-100;
+    }
+  }
+  i {
+    color: $sermadre-rose;
+    vertical-align: middle;
+    margin-right: 3px;
+    font-size: 1.5em;
+  }
+  .icon-search-mobile {
+    font-size: 1.85em;
+  }
+  &__txt {
+    vertical-align: middle;
+  }
+}
+
+@media (max-width: 1360px) {
+  .header-menu {
+    &__link {
+      width: $height-header;
+      text-align: center;
+      padding: 0 2em;
+      i {
+        color: $color-txt;
+      }
+    }
+    &__txt {
+      display: none;
+    }
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .header-menu {
+    &__link {
+      @include hover-focus {
+        background-color: transparent;
+      }
+    }
+  }
+}
+.fitLengthHeader {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: calc(100% - 420px);
+  width: 100%;
+}
